@@ -6,7 +6,9 @@ function Heading() {
 
   return (
     <div className=" mx-3 ">
-      <div className="heading">My Todo List</div>
+      <div className="heading">
+        <h1>My Todo List</h1>
+      </div>
       <div className="date">{date.toDateString()}</div>
     </div>
   );

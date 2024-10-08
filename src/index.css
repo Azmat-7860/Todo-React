@@ -29,6 +29,11 @@
   font-weight: 600;
   text-decoration: underline;
 }
+.progress{
+  width: 100%;
+  /* margin: 20px 0px; */
+  height: 10px;
+}
 input{
   width:max-content;
   border: none;
@@ -50,6 +55,11 @@ input:hover{
 .item-box:hover{
   border: 1px solid var(--border-color);
 }
+.red-line-through {
+  text-decoration: line-through;
+  text-decoration-color: var(--border-color);
+}
+
 .item-btn{
   border: none;
   border-radius: 5px;
