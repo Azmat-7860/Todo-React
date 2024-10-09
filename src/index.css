@@ -10,8 +10,8 @@
   box-sizing: border-box;
   color:var(--text-color) ;
   font-family: "Caveat", cursive;
-    background-color: rgb(27, 26, 26);
-    font-size: large;
+  background-color: rgb(27, 26, 26);
+  font-size: large;
 }
 
 .todo-container{
@@ -25,13 +25,12 @@
   left: 50%;
   transform: translate(-50%,-50%);
 }
-.heading h1{
+.heading-item h1{
     font-family: "Lobster", sans-serif;
     font-weight: 400; 
     font-style: normal;
-  
-  /* font-size: 30px;
-  font-weight: 600; */
+   /* font-size: 30px; */
+  /* font-weight: 600; */
 }
 .date{
   font-weight: 600;
@@ -39,17 +38,21 @@
 }
 .progress{
   width: 100%;
-  /* margin: 20px 0px; */
   height: 10px;
 }
 input{
   width:max-content;
   border: none;
+  font-size: 20px !important;
   border-radius: 10px;
   padding: 0px 25px;
   border-bottom: 1px solid var(--text-color) ;
   transition: all 0.9s ease-out;
+} 
+input::placeholder{
+  font-size: 20px;
 }
+
 input:hover{
   outline: none;
   border:1px solid  var(--border-color);

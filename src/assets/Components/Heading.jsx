@@ -5,9 +5,10 @@ function Heading() {
   // console.log(date);
 
   return (
-    <div className=" mx-3 ">
-      <div className="heading">
+    <div className="mx-3">
+      <div className="heading-item d-flex justify-content-between align-items-center">
         <h1>My Todo List</h1>
+        <span className="badge text-bg-danger ms-auto">V2.0</span>
       </div>
       <div className="date">{date.toDateString()}</div>
     </div>
