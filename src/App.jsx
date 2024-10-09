@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Heading from "./assets/Components/Heading";
 import Input from "./assets/Components/Input";
@@ -6,21 +6,7 @@ import TodoItems from "./assets/Components/TodoItems";
 import { TodoContext, TodoProvider } from "./ContextAPI/Context";
 
 function App() {
-  let itemName = [
-    {
-      name: "mango",
-      isComplete: false,
-    },
-    {
-      name: "apple",
-      isComplete: false,
-    },
-    {
-      name: "banana",
-      isComplete: false,
-    },
-  ];
-  const [todos, setTodos] = useState(itemName);
+  const [todos, setTodos] = useState([]);
 
   const handleAdd = (todo) => {
     let newTodo = [{ name: todo, isComplete: false }, ...todos];
@@ -34,7 +20,6 @@ function App() {
       }
       return todo;
     });
-    // console.log(newTodos);
     setTodos(newTodos);
   };
 
@@ -43,6 +28,22 @@ function App() {
     newTodos.splice(itemIndex, 1);
     setTodos(newTodos);
   };
+
+  // Load todos from localStorage when component mounts
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem("todos"));
+    if (storedTodos) {
+      setTodos(storedTodos); // Load todos from localStorage
+    }
+  }, []);
+
+  // Save todos to localStorage whenever they change
+  useEffect(() => {
+    if (todos && todos.length > 0) {
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+  }, [todos]);
+
   return (
     <TodoProvider
       value={{
@@ -54,11 +55,6 @@ function App() {
     >
       <div className="todo-container">
         <Heading />
-        {/* <div className="m-3">
-        <p>Your Progress 🏃‍♂️🏃‍♂️</p>
-        <progress className="progress" value="93" max="100" />
-      </div> */}
-
         <Input />
         <TodoItems />
       </div>

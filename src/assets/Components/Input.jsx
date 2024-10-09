@@ -17,8 +17,13 @@ function Input() {
   };
   return (
     <div className=" m-2 d-flex justify-content-around">
-      <input type="text" placeholder="✍ Enter todo here..." ref={TodoRef} />
-      <button type="button" className="item-btn py-2 fs-5" onClick={handleAdd}>
+      <input type="text" placeholder="✍ Write todo here..." ref={TodoRef} />
+      <button
+        type="button"
+        className="item-btn py-2 fs-5"
+        title="Add item"
+        onClick={handleAdd}
+      >
         ➕
       </button>
     </div>

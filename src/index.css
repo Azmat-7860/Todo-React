@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Signika+Negative:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 :root{
   --text-color : rgb(197, 197, 197);
   --border-color : red;
@@ -8,12 +9,15 @@
   padding: 0;
   box-sizing: border-box;
   color:var(--text-color) ;
-  font-family: "Signika Negative", sans-serif;
-  background-color: rgb(27, 26, 26);
+  font-family: "Caveat", cursive;
+    background-color: rgb(27, 26, 26);
+    font-size: large;
 }
 
 .todo-container{
-  /* border: 1px solid var(--border-color); */
+  border: 1px solid var(--border-color);
+  padding: 10px 5px;
+  border-radius: 10px;
   /* height: 400px; */
   width: 350px;
   position: absolute; 
@@ -21,9 +25,13 @@
   left: 50%;
   transform: translate(-50%,-50%);
 }
-.heading{
-  font-size: 30px;
-  font-weight: 600;
+.heading h1{
+    font-family: "Lobster", sans-serif;
+    font-weight: 400; 
+    font-style: normal;
+  
+  /* font-size: 30px;
+  font-weight: 600; */
 }
 .date{
   font-weight: 600;
@@ -47,7 +55,7 @@ input:hover{
   border:1px solid  var(--border-color);
 }
 .item-box{
-  height: 50px;
+  min-height: 50px;
   border: 1px solid var(--text-color);
   border-radius: 10px;
   transition: all 0.9s ease-out;

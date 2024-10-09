@@ -15,16 +15,24 @@ function TodoItem({ itemName, itemIndex, isItem }) {
   };
 
   return (
-    <div className=" item-box m-2 d-flex justify-content-between align-items-center">
+    <div className=" item-box m-2 column-gap-2 d-flex justify-content-between align-items-center">
       <div className={`ms-2 text-capitalize ${isItem && "red-line-through"}`}>
         {itemName}
       </div>
 
-      <div className="me-2 w-100 d-flex  justify-content-end column-gap-2 ">
-        <button className="item-btn " onClick={handleComplete}>
+      <div className="me-2 d-flex  justify-content-end column-gap-2 ">
+        <button
+          className="item-btn"
+          title="Task Completed "
+          onClick={handleComplete}
+        >
           ✔
         </button>
-        <button className="item-btn fs-6" onClick={handleDltBtn}>
+        <button
+          className="item-btn fs-6"
+          title="Delete Task "
+          onClick={handleDltBtn}
+        >
           ❌
         </button>
       </div>
