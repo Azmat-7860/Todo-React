@@ -19,7 +19,7 @@ function Input() {
 
   return (
     <div className=" m-2 d-flex justify-content-around">
-      <input type="text" placeholder="✍ Write todo here..." ref={TodoRef} />
+      <input type="text" placeholder="✍ Todo here..." ref={TodoRef} />
       <button
         type="button"
         className="item-btn  pb-2"
