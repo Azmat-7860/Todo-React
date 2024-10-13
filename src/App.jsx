@@ -8,6 +8,13 @@ import { TodoContext, TodoProvider } from "./ContextAPI/Context";
 function App() {
   const [todos, setTodos] = useState([]);
 
+  const handleProgress = () => {
+    const todoLength = todos.length;
+    const completedTodos = todos.filter((todo) => todo.isComplete).length;
+    const progress = (completedTodos / todoLength) * 100;
+    return progress;
+  };
+
   const handleAdd = (todo) => {
     let newTodo = [{ name: todo, isComplete: false }, ...todos];
     setTodos(newTodo);
@@ -49,6 +56,7 @@ function App() {
       value={{
         items: todos,
         addItem: handleAdd,
+        progress: handleProgress,
         dltItem: handleDlt,
         completeItem: handleComplete,
       }}
